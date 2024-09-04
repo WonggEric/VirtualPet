@@ -1,12 +1,6 @@
 import processing.serial.*;
 import cc.arduino.*;
 Arduino arduino;
-int x = 425;
-int z = 344;
-int j = 170;
-int l;
-
-
 
 void setup(){
   size(1000,1000);
@@ -87,20 +81,5 @@ public void draw(){
   fill(255,182,193);
   quad(240,589-x,200,584-x,200,645-x,274,687-x);
   quad(761,589-x,726,690-x,801,645-x,801,583-x);
-  
-  //jaw animation 
-  if(y <= 15){
-    int l = 3;
-    fill(192,134,84);
-    quad(300,800-z+l,700,800-z+l,550,925-z+l,450,925-z+l);
-    fill(255,200,217);
-    rect(301,379,400,80);
-    fill(192,134,84);
-    rect(300,378,50,83);
-    rect(700,378,-50,82);
-  }else{
-    int l = -80;
-    fill(192,134,84);
-    quad(300,800-z+l,700,800-z+l,550,925-z+l,450,925-z+l);
-  }
 }
+  
