@@ -74,8 +74,10 @@ void draw(){
   quad(761,589,726,690,801,645,801,583);
 }
 
-// New Code for Monkey with jaw animation created with the Circuit Playground
+// New Code for Monkey with jaw animation and eyebrows raised created with the Circuit Playground
 */
+
+
 import processing.serial.*;
 import cc.arduino.*;
 Arduino arduino;
@@ -94,7 +96,10 @@ void setup(){
 public void draw(){
   background(192);
   float y = arduino.analogRead(5)/5;
-  System.out.println(y);
+  float m = arduino.analogRead(1);
+  System.out.print(y +"\t");
+  System.out.println(m);
+  
   noFill();
   noStroke();
 
@@ -139,10 +144,6 @@ public void draw(){
   quad(390,599-x,370,635-x,395,615-x,422,613-x);
   quad(620,600-x,635,635-x,612.5,615-x,578,613-x);
   fill(52,38,28);
-  quad(323,594-x,332,629-x,390,600-x,405,562-x);
-  quad(500,610-x,390,600-x,405,562-x,500,593-x);
-  quad(500,610-x,620,600-x,602,562-x,500,593-x);
-  quad(602,562-x,620,600-x,670,626-x,677,593-x);  
   ellipse(400,631-x,12.5,12.5);
   ellipse(605,631-x,12.5,12.5);
   noFill();
@@ -177,5 +178,21 @@ public void draw(){
     fill(192,134,84);
     quad(300,800-z+l,700,800-z+l,550,925-z+l,450,925-z+l);
   }
-}
+  
+  if(m == 1023){
+    int u = -50;
+    fill(0,0,0);
+     quad(323,594-x+u,332,629-x+u,390,600-x+u,405,562-x+u);
+     quad(500,610-x+u,390,600-x+u,405,562-x+u,500,593-x+u);
+     quad(500,610-x+u,620,600-x+u,602,562-x+u,500,593-x+u);
+     quad(602,562-x+u,620,600-x+u,670,626-x+u,677,593-x+u);  
+  }else{
+    fill(0,0,0);
+     quad(323,594-x,332,629-x,390,600-x,405,562-x);
+     quad(500,610-x,390,600-x,405,562-x,500,593-x);
+     quad(500,610-x,620,600-x,602,562-x,500,593-x);
+     quad(602,562-x,620,600-x,670,626-x,677,593-x);  
+   }
+
+  }
 */
